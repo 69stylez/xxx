@@ -9,40 +9,6 @@
             <canvas id="canvas" style="width: 1000px; height: 600px">
           </canvas>
         </div>
-
-        <script language="javascript">
-          var converter = require('json-2-csv');
-          alert("asdfadsf");
-          var documents = [
-              {
-                  Make: 'Nissan',
-                  Model: 'Murano',
-                  Year: '2013',
-                  Specifications: {
-                      Mileage: '7106',
-                      Trim: 'S AWD'
-                  }
-              },
-              {
-                  Make: 'BMW',
-                  Model: 'X5',
-                  Year: '2014',
-                  Specifications: {
-                      Mileage: '3287',
-                      Trim: 'M'
-                  }
-              }
-          ];
-
-          var json2csvCallback = function (err, csv) {
-              if (err) throw err;
-              //console.log(csv);
-              alert(csv);
-          };
-
-          converter.json2csv(documents, json2csvCallback);
-        </script>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js">
         </script>
 
@@ -50,44 +16,8 @@
         </script>
 
         <script>
-          var api_key = 'ybbxvmqsqrkvfhhrrpjs'
-            
-          axios({
-            method: 'post',
-            url: 'https://api.flex.io/v1/me/pipes/examples-demo-create-chart-with-chartjs-from-a-csv2/run',
-            headers: {
-              Authorization: 'Bearer ' + api_key
-            }
-          })
-
-          .then(response => {
-            var ctx = document.getElementById('canvas').getContext('2d')
-
-            window.my_chart = new Chart(ctx, {
-              //type: 'horizontalBar',
-              type: 'radar',
-              // data: response.data,
-              data: {
-                labels: ['Running', 'Swimming', 'Eating', 'Cycling'],
-                datasets: [{
-                  data: [20, 10, 4, 2]
-                }]
-              },
-              options: {
-                responsive: false,
-                legend: {
-                  position: 'top'
-                },
-                title: {
-                  display: true,
-                  text: 'Power a Chart with Flex.io'
-                }
-              }
-            })
-          })
-
-          .catch(response => {
-          })
+          var xxxx = 'ybbxvmqsqrksdafvfhhrrpjs'
+          alert(xxxx);
         </script>
 
     </body>
