@@ -5,14 +5,42 @@
 
         <div>XXXX13122142341234</div>
 
-        <a href="https://github.com/flexiodata/examples/tree/master/demo-chartjs-from-csv">
-            <img alt="Fork me on GitHub" class="z-max" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" style="position: absolute; top: 0; right: 0; border: 0;"/>
-        </a>
-
         <div style="text-align:center;">
             <canvas id="canvas" style="width: 1000px; height: 600px">
           </canvas>
         </div>
+
+        <script>
+          var converter = require('json-2-csv');
+
+          var documents = [
+              {
+                  Make: 'Nissan',
+                  Model: 'Murano',
+                  Year: '2013',
+                  Specifications: {
+                      Mileage: '7106',
+                      Trim: 'S AWD'
+                  }
+              },
+              {
+                  Make: 'BMW',
+                  Model: 'X5',
+                  Year: '2014',
+                  Specifications: {
+                      Mileage: '3287',
+                      Trim: 'M'
+                  }
+              }
+          ];
+
+          var json2csvCallback = function (err, csv) {
+              if (err) throw err;
+              console.log(csv);
+          };
+
+          converter.json2csv(documents, json2csvCallback);
+        </script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js">
         </script>
