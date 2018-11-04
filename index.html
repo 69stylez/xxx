@@ -36,7 +36,8 @@
 
           var json2csvCallback = function (err, csv) {
               if (err) throw err;
-              console.log(csv);
+              //console.log(csv);
+              alert(csv);
           };
 
           converter.json2csv(documents, json2csvCallback);
